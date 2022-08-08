@@ -38,7 +38,7 @@ public class Application {
     public LocalContainerEntityManagerFactoryBean getEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setDataSource(getDataSource());
-        entityManagerFactory.setPackagesToScan("org.example");
+        entityManagerFactory.setPackagesToScan("org.example.dao");
         JpaVendorAdapter jpaAdapter = new HibernateJpaVendorAdapter();
         entityManagerFactory.setJpaVendorAdapter(jpaAdapter);
         Properties props = new Properties();
