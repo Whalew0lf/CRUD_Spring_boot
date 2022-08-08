@@ -11,14 +11,11 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.context.annotation.PropertySource;
-
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @SpringBootApplication
-@PropertySource("application.properties")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
