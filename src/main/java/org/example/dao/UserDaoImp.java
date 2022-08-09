@@ -18,8 +18,7 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        TypedQuery<User> query = entityManager.createQuery("SELECT u from User u", User.class);
-        return query.getResultList();
+        return entityManager.createQuery("SELECT u from User u", User.class).getResultList();
     }
 
     @Override
@@ -30,9 +29,7 @@ public class UserDaoImp implements UserDao {
     @Transactional
     @Override
     public void removeUser(Long id) {
-        Query query = entityManager.createQuery("DELETE FROM User WHERE :id = id");
-        query.setParameter("id", id);
-        query.executeUpdate();
+        entityManager.createQuery("DELETE FROM User WHERE :id = id").setParameter("id", id).executeUpdate();
     }
 
     @Transactional
