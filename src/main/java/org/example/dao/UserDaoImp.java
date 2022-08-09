@@ -26,13 +26,11 @@ public class UserDaoImp implements UserDao {
         entityManager.persist(user);
     }
 
-    @Transactional
     @Override
     public void removeUser(Long id) {
         entityManager.createQuery("DELETE FROM User WHERE :id = id").setParameter("id", id).executeUpdate();
     }
 
-    @Transactional
     @Override
     public void updateUser(User user) {
         entityManager.merge(user);
